@@ -3,22 +3,30 @@ package com.lee.algorithm.level1;
 public class NumberStrings {
     boolean solution(String s) {
         boolean answer = true;
-        int count = 0;
 
-        if (s.contains("p")) {
-            count++;
+        char[] a = s.toCharArray();
+
+        int p_count = 0;
+        int y_count = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == 'p' || a[i] == 'P') {
+                p_count++;
+            }
+
+            if (a[i] == 'y' || a[i] == 'Y') {
+                y_count++;
+            }
         }
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println(count);
+
+        if (p_count != y_count) {
+            answer = false;
+        }
 
         return answer;
     }
 
-    boolean noPandY() {
-        return true;
-    }
-
     public static void main(String[] args) {
-        new NumberStrings().solution("pPoooyY");
+        new NumberStrings().solution("Pyy");
     }
 }
