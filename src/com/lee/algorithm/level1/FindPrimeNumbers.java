@@ -14,7 +14,7 @@ public class FindPrimeNumbers {
                }
            }
 
-           if (flag = true) {
+           if (flag == true) {
                answer++;
            }
         }
