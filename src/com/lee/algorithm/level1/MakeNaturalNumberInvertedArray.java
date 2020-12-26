@@ -13,24 +13,32 @@ n	    return
  */
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MakeNaturalNumberInvertedArray {
     public int[] solution(long n) {
 
         int[] answer = {};
 
-        int i = 0;
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
         while (n % 10 != 0) {
-            answer[i] = (int)n % 10;
+            arrayList.add((int)n % 10);
             n = n / 10;
-            i++;
         }
+
+        answer = new int[arrayList.size()];
+
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = arrayList.get(i);
+            System.out.print(answer[i]);
+        }
+
 
         return answer;
     }
 
     public static void main(String[] args) {
-        new MakeNaturalNumberInvertedArray().solution(12345);
+        new MakeNaturalNumberInvertedArray().solution(9876543);
     }
 }
