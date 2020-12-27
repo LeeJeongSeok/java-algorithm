@@ -20,7 +20,7 @@ public class MakeNaturalNumberInvertedArray {
 
         int[] answer = {};
 
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        //ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
         while (n % 10 != 0) {
             arrayList.add((int)n % 10);
