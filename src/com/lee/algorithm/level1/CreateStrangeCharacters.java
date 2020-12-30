@@ -19,25 +19,23 @@ public class CreateStrangeCharacters {
 
         String answer = "";
 
-        String[] strings = s.split(" ");
+        String str[] = s.split("");
+        String space = " ";
+        int cnt = 0;
 
-        for (int i = 0; i < strings.length; i++) {
-            String words = strings[i];
-
-            char[] word = words.toCharArray();
-
-            for (int j = 0; j < word.length; j++) {
-                if (j % 2 == 0) {
-                    word[j] = changeUpper(word[j]);
+        for (int i = 0; i < str.length; i++) {
+            if (str[i].equals(space)) {
+                cnt = 0;
+            } else {
+                if (cnt % 2 == 0) {
+                    cnt++;
+                    str[i] = str[i].toUpperCase();
+                } else {
+                    cnt++;
+                    str[i] = str[i].toLowerCase();
                 }
             }
-
-            if (i == strings.length - 1) {
-                answer += String.valueOf(word);
-            } else {
-                answer += String.valueOf(word) + " ";
-            }
-
+            answer += str[i];
         }
 
         return answer;
@@ -45,14 +43,14 @@ public class CreateStrangeCharacters {
     }
 
 
-    private char changeUpper(char word) {
-        if (word > 'a' && word < 'z') {
-            word = (char) (word - 32);
-        } else {
-            word = (char) (word + 32);
-        }
-        return word;
-    }
+//    private char changeUpper(char word) {
+//        if (word > 'a' && word < 'z') {
+//            word = (char) (word - 32);
+//        } else {
+//            word = (char) (word + 32);
+//        }
+//        return word;
+//    }
 
     public static void main(String[] args) {
         new CreateStrangeCharacters().solution("try hello world");
