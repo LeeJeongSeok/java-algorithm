@@ -1,35 +1,42 @@
 package com.lee.algorithm.level1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SmallestNumberRemove {
     public int[] solution(int[] arr) {
-        int[] answer = {};
-
-        if (arr[0] == -10) {
-            answer[0] = -1;
-        }
 
         ArrayList<Integer> list = new ArrayList<Integer>();
 
-        for (int i = 0; i < arr.length; i++) {
-            list.add(arr[i]);
+        if (arr.length <= 1) {
+            return new int[] {-1};
         }
 
-        list.remove(arr.length-1);
-        answer = new int[list.size()];
+        int min = arr[0];
 
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i]);
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
 
+        while (list.contains(min)) {
+            int i = list.indexOf(min);
+            list.remove(i);
+        }
+
+        int[] answer = new int[list.size()];
 
         for (int i = 0; i < list.size(); i++) {
             answer[i] = list.get(i);
+            System.out.println(answer[i]);
         }
-
 
         return answer;
     }
 
     public static void main(String[] args) {
-        new SmallestNumberRemove().solution(new int[]{-10});
+        new SmallestNumberRemove().solution(new int[]{8, 9, 1, 3, 2});
     }
 }
