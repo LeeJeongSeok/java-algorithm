@@ -5,8 +5,6 @@ public class HarshadNumber {
 
         boolean answer = true;
 
-
-
         return answer;
 
     }
