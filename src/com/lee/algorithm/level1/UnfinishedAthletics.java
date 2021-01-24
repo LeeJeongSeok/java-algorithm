@@ -12,10 +12,9 @@ public class UnfinishedAthletics {
         Arrays.sort(completion);
 
         for (int i = 0; i < completion.length; i++) {
-            for (int j = 0; j < participant.length; j++) {
-                if (!participant[j].equals(completion[i])) {
-                    answer = participant[j];
-                }
+            if (!participant[i].equals(completion[i])) {
+                answer = participant[i];
+                break;
             }
         }
 
@@ -24,6 +23,6 @@ public class UnfinishedAthletics {
     }
 
     public static void main(String[] args) {
-        new UnfinishedAthletics().solution(new String[]{"mislav", "stanko", "mislav", "ana"}, new String[]{"stanko", "ana", "mislav"});
+        new UnfinishedAthletics().solution(new String[]{"mislav"}, new String[]{});
     }
 }
