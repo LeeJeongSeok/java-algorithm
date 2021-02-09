@@ -1,6 +1,5 @@
 package com.lee.algorithm.level1;
 
-import sun.tools.native2ascii.resources.MsgNative2ascii_zh_CN;
 
 import java.util.Scanner;
 

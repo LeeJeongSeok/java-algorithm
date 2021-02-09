@@ -28,6 +28,6 @@ public class FailRate {
         return answer;
     }
     public static void main(String[] args) {
-        new FailRate().solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3});
+        new FailRate().solution(4, new int[]{2, 1, 2, 6, 2, 4, 3, 3});
     }
 }

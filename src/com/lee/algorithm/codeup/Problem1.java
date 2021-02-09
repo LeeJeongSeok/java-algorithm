@@ -1,6 +1,5 @@
 package com.lee.algorithm.codeup;
 
-import sun.lwawt.macosx.CPrinterDevice;
 
 public class Problem1 {
 
